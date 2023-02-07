@@ -3,12 +3,23 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 9px;
+  background-color: rgb(223, 205, 217);
+  border-bottom: 2px solid rgb(200, 161, 209);
 
   .logo-container {
     height: 100%;
-    width: 70px;
-    padding: 25px;
+    // width: 70px;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-container h1:hover {
+    color: blueviolet;
+    font-weight: bold;
   }
 
   .nav-links-container {
@@ -21,6 +32,11 @@
     .nav-link {
       padding: 10px 15px;
       cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: blueviolet;
+      font-weight: bold;
     }
   }
 }
