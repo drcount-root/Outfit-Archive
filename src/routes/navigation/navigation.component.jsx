@@ -18,9 +18,11 @@ const Navigation = () => {
 
   const [darkMode, setDarkMode] = useState(true);
 
+const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
+
   return (
     <Fragment>
-      <div className="navigation">
+      <div className={`navigation ${st}`}>
         <Link className="logo-container" to="/">
           {/* <CrwnLogo className="logo" /> */}
           <img src={logo} />
