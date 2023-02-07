@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
@@ -7,7 +7,7 @@ import { UserContext } from "../../contexts/user.context";
 
 // import logo from "../../assets/crown.svg";
 
-import logo from '../../assets/logo-outfit-archive.jpeg'
+import logo from "../../assets/logo-outfit-archive.jpeg";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -16,15 +16,27 @@ import "./navigation.styles.scss";
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
 
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to="/">
           {/* <CrwnLogo className="logo" /> */}
-          <img src={logo}/>
+          <img src={logo} />
           <p>OArc</p>
         </Link>
         <div className="nav-links-container">
+          <button
+            className={darkMode ? "darkmode" : "lightmode"}
+            onClick={() => {
+              setDarkMode((prevVal) => !prevVal);
+              darkMode ? document.getElementById('root').classList.add('darkmode') : document.getElementById('root').classList.remove('darkmode')
+            }}
+          >
+            {darkMode ? `🌙` : `🔆`}
+          </button>
+
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
