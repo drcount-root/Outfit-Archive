@@ -19,3 +19,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+body{
+  overflow-y: scroll;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue rgb(0, 0, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(231, 77, 77);
+  border-radius: 20px;
+  border: 2px solid rgb(0, 0, 0);
+}
