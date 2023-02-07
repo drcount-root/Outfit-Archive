@@ -5,16 +5,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
 
   &:hover {
     cursor: pointer;
+    border-radius: 9px;
 
     & .background-image {
       transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
     & .category-body-container {
@@ -39,6 +40,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
+    border-radius: 9px;
   }
 
   .category-body-container {
@@ -48,21 +50,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    // border: 1px solid black;
     background-color: white;
     opacity: 0.7;
     position: absolute;
+    border-radius: 9px;
 
     h2 {
       font-weight: bold;
       margin: 0 6px 0;
       font-size: 22px;
-      color: #4a4a4a;
+      color: #000000;
     }
 
     p {
-      font-weight: lighter;
+      font-weight: 400;
       font-size: 16px;
+      color: rgb(0, 0, 0);
     }
   }
 }
