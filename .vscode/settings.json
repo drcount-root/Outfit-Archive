@@ -1,0 +1,7 @@
+{
+  "terminal.integrated.tabs.focusMode": "singleClick",
+  "files.autoSave": "afterDelay",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true
+}

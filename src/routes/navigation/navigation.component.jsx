@@ -20,7 +20,7 @@ const Navigation = () => {
         <Link className="logo-container" to="/">
           {/* <CrwnLogo className="logo" /> */}
           <img src={logo}/>
-          <h1>Outfit Archive</h1>
+          <p>OArc</p>
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to="/shop">

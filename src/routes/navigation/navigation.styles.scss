@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 9px;
-  background-color: rgb(223, 205, 217);
-  border-bottom: 2px solid rgb(200, 161, 209);
+  background-color: rgb(236, 236, 236);
+  border-bottom: 2px solid rgb(194, 194, 194);
 
   .logo-container {
     height: 100%;
@@ -17,9 +17,15 @@
     align-items: center;
   }
 
-  .logo-container h1:hover {
-    color: blueviolet;
-    font-weight: bold;
+  .logo-container p {
+    font-family: "Dancing Script", cursive;
+    font-weight: 400;
+    font-size: 2.7rem;
+  }
+
+  .logo-container p:hover {
+    color: rgb(114, 45, 199);
+    transition: 0.5s;
   }
 
   .nav-links-container {
@@ -32,11 +38,13 @@
     .nav-link {
       padding: 10px 15px;
       cursor: pointer;
+      font-family: "Dancing Script", cursive;
+      font-weight: bold;
     }
 
     .nav-link:hover {
-      color: blueviolet;
-      font-weight: bold;
+      color: rgb(114, 45, 199);
+      transition: 0.5s;
     }
   }
 }
