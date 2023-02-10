@@ -18,7 +18,7 @@ const Navigation = () => {
 
   const [darkMode, setDarkMode] = useState(true);
 
-const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
+  const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
 
   return (
     <Fragment>
@@ -29,11 +29,14 @@ const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
           <p>OArc</p>
         </Link>
         <div className="nav-links-container">
-          <button style={{margin: '0 15px'}}
+          <button
+            style={{ margin: "0 15px" }}
             className={darkMode ? "darkmode" : "lightmode"}
             onClick={() => {
               setDarkMode((prevVal) => !prevVal);
-              darkMode ? document.getElementById('root').classList.add('darkmode') : document.getElementById('root').classList.remove('darkmode')
+              darkMode
+                ? document.getElementById("root").classList.add("darkmode")
+                : document.getElementById("root").classList.remove("darkmode");
             }}
           >
             {darkMode ? `🌙` : `🔆`}

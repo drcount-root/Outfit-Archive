@@ -7,6 +7,9 @@
   background-color: rgb(239, 239, 239);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   .logo-container {
     height: 100%;
@@ -30,7 +33,7 @@
   }
 
   .logo-container p:hover {
-    color: rgb(114, 45, 199);
+    color: rgb(202, 55, 22);
     transition: 0.5s;
   }
 
@@ -49,20 +52,20 @@
     }
 
     .nav-link:hover {
-      color: rgb(114, 45, 199);
+      color: rgb(202, 55, 22);
       transition: 0.5s;
     }
 
     .darkmode {
       background-color: #1a1a1a;
-      border-radius: 5px;
+      border-radius: 25px;
       border: 1px solid black;
       padding: 3px;
     }
 
     .lightmode {
       background-color: #fff;
-      border-radius: 5px;
+      border-radius: 25px;
       border: 1px solid rgb(255, 255, 255);
       padding: 3px;
     }
@@ -70,8 +73,9 @@
 }
 
 .navAtDarkMode {
-  background-color: rgba(0, 0, 0, 0.51);
-  border-bottom: 2px solid white;
+  backdrop-filter: blur(9px);
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(57, 56, 56, 0.21);
 
   .logo-container p {
     color: white;
@@ -82,7 +86,8 @@
   }
 }
 
-.navAtLightMode{
-  background-color: rgb(239, 239, 239);
+.navAtLightMode {
+  backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 0.003);
   color: #000000;
 }
