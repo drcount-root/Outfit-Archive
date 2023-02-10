@@ -29,7 +29,7 @@ const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
           <p>OArc</p>
         </Link>
         <div className="nav-links-container">
-          <button
+          <button style={{margin: '0 15px'}}
             className={darkMode ? "darkmode" : "lightmode"}
             onClick={() => {
               setDarkMode((prevVal) => !prevVal);
