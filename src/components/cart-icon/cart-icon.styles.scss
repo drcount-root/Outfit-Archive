@@ -15,9 +15,12 @@
 
   .item-count {
     position: absolute;
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 0.7;
+    font-family: sans-serif;
     font-weight: bold;
     bottom: 12px;
+    color: rgb(243, 68, 20);
     justify-content: center;
   }
 }
