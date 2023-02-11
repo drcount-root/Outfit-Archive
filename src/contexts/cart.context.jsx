@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from "react";
 
 export const addCartItem = (cartItems, productToAdd) => {
   const existingCartItem = cartItems.find(
@@ -21,6 +21,7 @@ export const CartContext = createContext({
   setIsOpen: () => {},
   cartItems: [],
   addItemToCart: () => {},
+  removeItemFromCart: () => {},
   cartItemCount: 0,
 });
 
@@ -39,6 +40,9 @@ export const CartProvider = ({ children }) => {
 
   const addItemToCart = (product) =>
     setCartItems(addCartItem(cartItems, product));
+
+  const removeItemFromCart = (productToRemove) =>
+    setCartItems(addCartItem(cartItems, productToRemove));
 
   const value = {
     isCartOpen,
