@@ -32,7 +32,7 @@
     color: white;
 
     &:hover {
-      background-color: rgba(0, 98, 255, 0.50);
+      background-color: rgba(0, 98, 255, 0.5);
       border: none;
       transition: 0.5s;
     }
@@ -47,6 +47,21 @@
       background-color: black;
       color: white;
       border: none;
+    }
+  }
+
+  &.addToCartButton {
+    background-color: rgb(231, 77, 77);
+    color: black;
+    // border: 2px solid rgb(180, 180, 180);
+    box-shadow: none;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+      box-shadow: none;
+      // border: 2px solid rgb(180, 180, 180);
     }
   }
 }

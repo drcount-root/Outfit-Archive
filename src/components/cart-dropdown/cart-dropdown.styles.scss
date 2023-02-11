@@ -5,11 +5,18 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid black;
-  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.216);
+  // background-color: rgba(207, 169, 240, 0.352);
+  background-color: rgba(254, 254, 254, 0.81);
   top: 90px;
   right: 40px;
   z-index: 5;
+  border-radius: 9px;
+  backdrop-filter: blur(14px);
+
+  &:hover {
+    // cart dropdown card animation
+  }
 
   .empty-message {
     font-size: 18px;
@@ -20,7 +27,8 @@
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    // overflow: scroll;
+    // overflow-y: scroll;
   }
 
   button {
