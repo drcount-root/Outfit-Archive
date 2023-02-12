@@ -1,4 +1,4 @@
-.category-container {
+.directory-item-container {
   min-width: 30%;
   height: 300px;
   flex: 1 1 auto;
@@ -18,7 +18,7 @@
       transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & .category-body-container {
+    & .body {
       opacity: 0.6;
     }
   }
@@ -43,7 +43,7 @@
     border-radius: 9px;
   }
 
-  .category-body-container {
+  .body {
     height: 90px;
     padding: 0 25px;
     display: flex;
