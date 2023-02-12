@@ -1,12 +1,8 @@
-import { Fragment, useContext, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Fragment, useContext } from "react";
+import { Outlet } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
-
-// import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
-
-// import logo from "../../assets/crown.svg";
 
 import logo from "../../assets/logo-outfit-archive.jpeg";
 
@@ -16,58 +12,119 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
-import "./navigation.styles.scss";
+import {
+  NavigationContainer,
+  NavLinks,
+  NavLink,
+  LogoContainer,
+  LogoImg,
+  LogoText,
+} from "./navigation.styles";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
 
-  const [darkMode, setDarkMode] = useState(true);
-
-  const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
-
   return (
     <Fragment>
-      <div className={`navigation ${st}`}>
-        <Link className="logo-container" to="/">
-          {/* <CrwnLogo className="logo" /> */}
-          <img src={logo} />
-          <p>OArc</p>
-        </Link>
-        <div className="nav-links-container">
-          <button
-            style={{ margin: "0 15px" }}
-            className={darkMode ? "darkmode" : "lightmode"}
-            onClick={() => {
-              setDarkMode((prevVal) => !prevVal);
-              darkMode
-                ? document.getElementById("root").classList.add("darkmode")
-                : document.getElementById("root").classList.remove("darkmode");
-            }}
-          >
-            {darkMode ? `🌙` : `🔆`}
-          </button>
-
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
+      <NavigationContainer>
+        <LogoContainer to="/">
+          <LogoImg src={logo} />
+          <LogoText>OArc</LogoText>
+        </LogoContainer>
+        <NavLinks>
+          <NavLink to="/shop">SHOP</NavLink>
 
           {currentUser ? (
-            <span className="nav-link" onClick={signOutUser}>
+            <NavLink as="span" onClick={signOutUser}>
               SIGN OUT
-            </span>
+            </NavLink>
           ) : (
-            <Link className="nav-link" to="/auth">
-              SIGN IN
-            </Link>
+            <NavLink to="/auth">SIGN IN</NavLink>
           )}
           <CartIcon />
-        </div>
+        </NavLinks>
         {isCartOpen && <CartDropdown />}
-      </div>
+      </NavigationContainer>
       <Outlet />
     </Fragment>
   );
 };
 
 export default Navigation;
+
+// JSX with Scss
+
+// import { Fragment, useContext, useState } from "react";
+// import { Outlet, Link } from "react-router-dom";
+
+// import { UserContext } from "../../contexts/user.context";
+// import { CartContext } from "../../contexts/cart.context";
+
+// // import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
+
+// // import logo from "../../assets/crown.svg";
+
+// import logo from "../../assets/logo-outfit-archive.jpeg";
+
+// import CartIcon from "../../components/cart-icon/cart-icon.component";
+
+// import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+
+// import { signOutUser } from "../../utils/firebase/firebase.utils";
+
+// import "./navigation.styles.scss";
+
+// const Navigation = () => {
+//   const { currentUser } = useContext(UserContext);
+//   const { isCartOpen } = useContext(CartContext);
+
+//   const [darkMode, setDarkMode] = useState(true);
+
+//   const st = darkMode ? "navAtLightMode" : "navAtDarkMode";
+
+//   return (
+//     <Fragment>
+//       <div className={`navigation ${st}`}>
+//         <Link className="logo-container" to="/">
+//           {/* <CrwnLogo className="logo" /> */}
+//           <img src={logo} />
+//           <p>OArc</p>
+//         </Link>
+//         <div className="nav-links-container">
+//           <button
+//             style={{ margin: "0 15px" }}
+//             className={darkMode ? "darkmode" : "lightmode"}
+//             onClick={() => {
+//               setDarkMode((prevVal) => !prevVal);
+//               darkMode
+//                 ? document.getElementById("root").classList.add("darkmode")
+//                 : document.getElementById("root").classList.remove("darkmode");
+//             }}
+//           >
+//             {darkMode ? `🌙` : `🔆`}
+//           </button>
+
+//           <Link className="nav-link" to="/shop">
+//             SHOP
+//           </Link>
+
+//           {currentUser ? (
+//             <span className="nav-link" onClick={signOutUser}>
+//               SIGN OUT
+//             </span>
+//           ) : (
+//             <Link className="nav-link" to="/auth">
+//               SIGN IN
+//             </Link>
+//           )}
+//           <CartIcon />
+//         </div>
+//         {isCartOpen && <CartDropdown />}
+//       </div>
+//       <Outlet />
+//     </Fragment>
+//   );
+// };
+
+// export default Navigation;
