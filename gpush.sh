@@ -11,7 +11,7 @@ while true; do
         echo "Message cannot be empty. Please enter some message."
     else
         git commit -m "$message"
-        git push -u origin styled-component-added
+        git push -u origin backup1-styled-component-added-deployment
         break
     fi
 done
